@@ -31,12 +31,13 @@ st.markdown("""
         height: 3em;
         font-weight: bold;
     }
-    .stMetric {
-        background-color: white;
-        padding: 15px;
-        border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
+.stMetric {
+    background-color: white;
+    color: #1f1f1f; /* Tambahkan baris ini untuk warna teks gelap */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
     </style>
     """, unsafe_allow_html=True)
 
