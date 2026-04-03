@@ -20,12 +20,12 @@ model, scaler, model_columns = load_assets()
 
 st.markdown("""
     <style>
-    /* Mengatur latar belakang halaman utama */
+    /* 1. Menghapus pengaturan background global agar mengikuti tema sistem (Dark) */
     .stApp {
-        background-color: #f5f7f9;
+        background-color: transparent;
     }
 
-    /* Mengatur gaya tombol */
+    /* 2. Mengatur gaya tombol agar tetap konsisten */
     .stButton>button {
         width: 100%;
         background-color: #0066b1;
@@ -35,24 +35,25 @@ st.markdown("""
         font-weight: bold;
         border: none;
     }
-    
-    .stButton>button:hover {
-        background-color: #004a80;
-        color: white;
-    }
 
-    /* Mengatur kotak hasil estimasi (Metric) */
+    /* 3. KHUSUS KOTAK HASIL: Latar belakang putih, teks hitam */
     [data-testid="stMetric"] {
-        background-color: white;
+        background-color: white !important;
         padding: 15px;
         border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        border: 1px solid #e0e0e0;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     }
 
-    /* Memaksa warna teks Label dan Nilai agar berwarna gelap (Terlihat) */
-    [data-testid="stMetricLabel"], [data-testid="stMetricValue"] {
+    /* 4. Memaksa teks di dalam kotak Metric berwarna gelap agar terbaca */
+    [data-testid="stMetricLabel"], 
+    [data-testid="stMetricValue"], 
+    [data-testid="stMetricDelta"] {
         color: #1f1f1f !important;
+    }
+
+    /* 5. Opsional: Mengatur warna header 'Hasil Estimasi' agar tetap putih/terang */
+    h1, h2, h3 {
+        color: white;
     }
     </style>
     """, unsafe_allow_html=True)
