@@ -20,9 +20,12 @@ model, scaler, model_columns = load_assets()
 
 st.markdown("""
     <style>
-    .main {
+    /* Mengatur latar belakang halaman utama */
+    .stApp {
         background-color: #f5f7f9;
     }
+
+    /* Mengatur gaya tombol */
     .stButton>button {
         width: 100%;
         background-color: #0066b1;
@@ -30,14 +33,27 @@ st.markdown("""
         border-radius: 5px;
         height: 3em;
         font-weight: bold;
+        border: none;
     }
-.stMetric {
-    background-color: white;
-    color: #1f1f1f; /* Tambahkan baris ini untuk warna teks gelap */
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
+    
+    .stButton>button:hover {
+        background-color: #004a80;
+        color: white;
+    }
+
+    /* Mengatur kotak hasil estimasi (Metric) */
+    [data-testid="stMetric"] {
+        background-color: white;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        border: 1px solid #e0e0e0;
+    }
+
+    /* Memaksa warna teks Label dan Nilai agar berwarna gelap (Terlihat) */
+    [data-testid="stMetricLabel"], [data-testid="stMetricValue"] {
+        color: #1f1f1f !important;
+    }
     </style>
     """, unsafe_allow_html=True)
 
