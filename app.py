@@ -80,7 +80,7 @@ with col3:
 
 col4, col5 = st.columns(2)
 with col4:
-    mpg = st.slider("Efisiensi Bahan Bakar (MPG)", 10.0, 100.0, 55.0)
+    mpg = st.sidebar.number_input("Efisiensi Bahan Bakar (MPG)", min_value=0.0, max_value=500.0, value=55.0, step=0.1)
 
 if st.button("💰 HITUNG ESTIMASI HARGA"):
     year_old = 2020 - year
